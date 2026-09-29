@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Students - NEX College of Arts and Science</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="header">
+    <form action="students.html" method="get">
+      <input type="text" name="search" placeholder="Search students">
+      <button type="submit">Search</button>
+    </form>
+    <a class="logo" href="index.html"><img src="assets/images/logo.png" alt="">NEX College of Arts and Science</a>
+  </div>
+
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="students.html" class="active">Students</a>
+    <a href="attendance.html">Attendance</a>
+    <a href="departments.html">Departments</a>
+    <a href="results.html">Results</a>
+    <a href="analytics.html">Analytics</a>
+  </div>
+
+  <div class="page">
+
+    <h1>Students</h1>
+    <p class="subtitle">All student records.</p>
+
+    <div id="studentsMessage" class="message" style="display:none"></div>
+
+    <div class="filters">
+      <input type="text" id="searchBox" placeholder="Name, roll number or department" size="30">
+      <select id="deptFilter">
+        <option value="All">All Departments</option>
+      </select>
+      <select id="yearFilter">
+        <option value="All">All Years</option>
+        <option value="1">1st Year</option>
+        <option value="2">2nd Year</option>
+        <option value="3">3rd Year</option>
+        <option value="4">4th Year</option>
+      </select>
+      <select id="semesterFilter">
+        <option value="All">All Semesters</option>
+      </select>
+      <button type="button" id="addBtn" class="main">Add Student</button>
+    </div>
+
+    <div class="filters">
+      Import from CSV:
+      <input type="file" id="csvFile" accept=".csv">
+      <button type="button" id="importBtn">Import</button>
+    </div>
+
+    <!-- add / edit form -->
+    <div class="box" id="formBox" style="display:none">
+      <h3 id="formTitle">Add Student</h3>
+      <div id="formMessage" class="message error" style="display:none"></div>
+
+      <form id="studentForm">
+        <div class="form-grid">
+          <div class="col">
+            <label>Full Name *
+              <input type="text" name="name">
+            </label>
+            <label>Roll Number *
+              <input type="text" name="rollNo">
+            </label>
+            <label>Email
+              <input type="email" name="email">
+            </label>
+            <label>Phone
+              <input type="tel" name="phone">
+            </label>
+            <label>Department *
+              <select name="department" id="formDept"></select>
+            </label>
+            <label>Semester *
+              <select name="semesterId" id="formSemester"></select>
+            </label>
+            <label>Year of Study *
+              <select name="year">
+                <option value="1">Year 1</option>
+                <option value="2">Year 2</option>
+                <option value="3">Year 3</option>
+                <option value="4">Year 4</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="col">
+            <label>Section
+              <input type="text" name="section">
+            </label>
+            <label>Course
+              <input type="text" name="course">
+            </label>
+            <label>Date of Birth
+              <input type="date" name="dob">
+            </label>
+            <label>Gender
+              <select name="gender">
+                <option value="">Not specified</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <label>Category
+              <select name="category">
+                <option value="">Not specified</option>
+                <option>General</option>
+                <option>OBC</option>
+                <option>BC</option>
+                <option>MBC</option>
+                <option>SC</option>
+                <option>ST</option>
+                <option>EWS</option>
+              </select>
+            </label>
+            <label>Blood Group
+              <select name="bloodGroup">
+                <option value="">Not specified</option>
+                <option>A+</option>
+                <option>A-</option>
+                <option>B+</option>
+                <option>B-</option>
+                <option>AB+</option>
+                <option>AB-</option>
+                <option>O+</option>
+                <option>O-</option>
+              </select>
+            </label>
+            <label>Languages Known
+              <input type="text" name="languages">
+            </label>
+          </div>
+
+          <div class="col">
+            <label>Address
+              <input type="text" name="address">
+            </label>
+            <label>Guardian Name
+              <input type="text" name="guardianName">
+            </label>
+            <label>Guardian Phone
+              <input type="tel" name="guardianPhone">
+            </label>
+            <label>Emergency Contact
+              <input type="tel" name="emergencyContact">
+            </label>
+            <label>Relationship to Guardian
+              <input type="text" name="relationship">
+            </label>
+            <label id="avatarRow">Photo URL
+              <input type="text" name="avatar">
+            </label>
+          </div>
+          <div class="clear"></div>
+        </div>
+
+        <button type="submit" class="main" id="saveBtn">Save</button>
+        <button type="button" id="cancelBtn">Cancel</button>
+      </form>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Roll No</th>
+          <th>Name</th>
+          <th>Department</th>
+          <th>Year</th>
+          <th>Sem</th>
+          <th class="num">Attendance</th>
+          <th class="num">Marks</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="studentRows">
+        <tr><td colspan="8">Loading...</td></tr>
+      </tbody>
+    </table>
+
+    <div class="pager">
+      <span id="pagerInfo"></span>
+      <span id="pagerButtons"></span>
+      &nbsp; Per page:
+      <select id="perPage">
+        <option value="12">12</option>
+        <option value="24">24</option>
+        <option value="48">48</option>
+      </select>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    NEX College of Arts and Science
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/students.js"></script>
+</body>
+</html>

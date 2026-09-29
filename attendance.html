@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance - NEX College of Arts and Science</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="header">
+    <form action="students.html" method="get">
+      <input type="text" name="search" placeholder="Search students">
+      <button type="submit">Search</button>
+    </form>
+    <a class="logo" href="index.html"><img src="assets/images/logo.png" alt="">NEX College of Arts and Science</a>
+  </div>
+
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="students.html">Students</a>
+    <a href="attendance.html" class="active">Attendance</a>
+    <a href="departments.html">Departments</a>
+    <a href="results.html">Results</a>
+    <a href="analytics.html">Analytics</a>
+  </div>
+
+  <div class="page">
+
+    <h1>Attendance</h1>
+    <p class="subtitle">Pick a semester and date, load the students and mark attendance.</p>
+
+    <div id="attMessage" class="message" style="display:none"></div>
+
+    <div class="box">
+      <div class="filters">
+        <select id="attSemester">
+          <option value="">Select semester</option>
+        </select>
+        <select id="attSubject">
+          <option value="">No subject</option>
+        </select>
+        <input type="date" id="attDate">
+        <input type="text" id="attTakenBy" placeholder="Taken by" value="Admin">
+        <button type="button" id="loadRosterBtn" class="main">Load Students</button>
+      </div>
+
+      <div id="attSummary" style="display:none">
+        <p>
+          Total: <b id="sumTotal">0</b> |
+          Present: <b id="sumPresent">0</b> |
+          Late: <b id="sumLate">0</b> |
+          Absent: <b id="sumAbsent">0</b> |
+          Excused: <b id="sumExcused">0</b>
+        </p>
+        <p>
+          <button type="button" id="allPresentBtn">All present</button>
+          <button type="button" id="allAbsentBtn">All absent</button>
+          <button type="button" id="clearBtn">Clear</button>
+          <button type="button" id="saveAttBtn" class="main">Save Attendance</button>
+        </p>
+      </div>
+
+      <div id="attRoster"></div>
+    </div>
+
+    <h2>Sessions</h2>
+    <div class="filters">
+      <select id="sourceFilter">
+        <option value="">All sources</option>
+        <option value="manual">Manual</option>
+        <option value="import">Imported</option>
+        <option value="legacy">Old records</option>
+      </select>
+      <button type="button" id="refreshBtn">Refresh</button>
+    </div>
+    <div id="attSessions">Loading...</div>
+    <div class="pager" id="attPager"></div>
+
+  </div>
+
+  <div class="footer">
+    NEX College of Arts and Science
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/attendance.js"></script>
+</body>
+</html>

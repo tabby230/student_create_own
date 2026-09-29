@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Departments - NEX College of Arts and Science</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="header">
+    <form action="students.html" method="get">
+      <input type="text" name="search" placeholder="Search students">
+      <button type="submit">Search</button>
+    </form>
+    <a class="logo" href="index.html"><img src="assets/images/logo.png" alt="">NEX College of Arts and Science</a>
+  </div>
+
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="students.html">Students</a>
+    <a href="attendance.html">Attendance</a>
+    <a href="departments.html" class="active">Departments</a>
+    <a href="results.html">Results</a>
+    <a href="analytics.html">Analytics</a>
+  </div>
+
+  <div class="page">
+
+    <h1>Departments</h1>
+    <p class="subtitle">Departments, heads and student numbers.</p>
+
+    <div id="deptMessage" class="message error" style="display:none"></div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Department</th>
+          <th>Head of Department</th>
+          <th class="num">Faculty</th>
+          <th class="num">Students</th>
+          <th class="num">Average Score</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="deptRows">
+        <tr><td colspan="7">Loading...</td></tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div class="footer">
+    NEX College of Arts and Science
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/departments.js"></script>
+</body>
+</html>

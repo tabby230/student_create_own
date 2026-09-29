@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Results - NEX College of Arts and Science</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="header">
+    <form action="students.html" method="get">
+      <input type="text" name="search" placeholder="Search students">
+      <button type="submit">Search</button>
+    </form>
+    <a class="logo" href="index.html"><img src="assets/images/logo.png" alt="">NEX College of Arts and Science</a>
+  </div>
+
+  <div class="menu">
+    <a href="index.html">Home</a>
+    <a href="students.html">Students</a>
+    <a href="attendance.html">Attendance</a>
+    <a href="departments.html">Departments</a>
+    <a href="results.html" class="active">Results</a>
+    <a href="analytics.html">Analytics</a>
+  </div>
+
+  <div class="page">
+
+    <h1>Examination Results</h1>
+    <p class="subtitle">Marks, grades and ranks.</p>
+
+    <div id="resultsMessage" class="message error" style="display:none"></div>
+
+    <h3>Grade Summary</h3>
+    <table class="small" id="gradeSummary">
+      <thead>
+        <tr><th>Grade</th><th>Marks</th><th class="num">Students</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <h3 style="margin-top:20px">All Results</h3>
+    <div class="filters">
+      <input type="text" id="resultSearch" placeholder="Name, roll number or department" size="30">
+      <select id="resultDept">
+        <option value="All">All Departments</option>
+      </select>
+      <select id="resultSemester">
+        <option value="All">All Semesters</option>
+      </select>
+      <select id="resultGrade">
+        <option value="All">All Grades</option>
+        <option value="O">O (95% and above)</option>
+        <option value="A+">A+ (90-94%)</option>
+        <option value="A">A (80-89%)</option>
+        <option value="B+">B+ (70-79%)</option>
+        <option value="B">B (60-69%)</option>
+        <option value="C">C (below 60%)</option>
+      </select>
+      <button type="button" id="exportBtn">Export CSV</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Roll No</th>
+          <th>Name</th>
+          <th>Department</th>
+          <th>Sem</th>
+          <th class="num">Marks</th>
+          <th>Grade</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="resultRows">
+        <tr><td colspan="8">Loading...</td></tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div class="footer">
+    NEX College of Arts and Science
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/results.js"></script>
+</body>
+</html>

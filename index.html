@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - NEX College of Arts and Science</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="header">
+    <form action="students.html" method="get">
+      <input type="text" name="search" placeholder="Search students">
+      <button type="submit">Search</button>
+    </form>
+    <a class="logo" href="index.html"><img src="assets/images/logo.png" alt="">NEX College of Arts and Science</a>
+  </div>
+
+  <div class="menu">
+    <a href="index.html" class="active">Home</a>
+    <a href="students.html">Students</a>
+    <a href="attendance.html">Attendance</a>
+    <a href="departments.html">Departments</a>
+    <a href="results.html">Results</a>
+    <a href="analytics.html">Analytics</a>
+  </div>
+
+  <div class="page">
+
+    <h1>NEX College of Arts and Science</h1>
+    <p class="subtitle">Student records, attendance, results and department details.</p>
+
+    <div id="homeMessage" class="message error" style="display:none"></div>
+
+    <div class="stats">
+      <div class="stat">
+        <div>Total Students</div>
+        <div class="value" id="totalStudents">-</div>
+      </div>
+      <div class="stat">
+        <div>Departments</div>
+        <div class="value" id="totalDepartments">-</div>
+      </div>
+      <div class="stat">
+        <div>Average Score</div>
+        <div class="value" id="averageScore">-</div>
+      </div>
+      <div class="stat">
+        <div>Pass Rate</div>
+        <div class="value" id="passRate">-</div>
+      </div>
+    </div>
+
+    <h2>Top Performers</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Name</th>
+          <th>Department</th>
+          <th>Semester</th>
+          <th>Score</th>
+          <th>CGPA</th>
+        </tr>
+      </thead>
+      <tbody id="performers">
+        <tr><td colspan="6">Loading...</td></tr>
+      </tbody>
+    </table>
+    <p><a href="results.html">View all results</a></p>
+
+  </div>
+
+  <div class="footer">
+    NEX College of Arts and Science
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

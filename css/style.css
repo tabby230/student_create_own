@@ -1,0 +1,196 @@
+/* NEX College - student management */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #222;
+  background: #f2f2f2;
+}
+
+a { color: #1a4f9c; }
+
+/* ---------- header / menu ---------- */
+.header {
+  background: #1a3c6e;
+  color: #fff;
+  padding: 10px 20px;
+  overflow: hidden;
+}
+
+.header .logo {
+  float: left;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.header .logo img {
+  height: 26px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.header form {
+  float: right;
+  margin: 0;
+}
+
+.header form input[type="text"] {
+  width: 180px;
+}
+
+.menu {
+  background: #12294c;
+  padding: 0 20px;
+}
+
+.menu a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 14px;
+}
+
+.menu a:hover { background: #24487f; }
+.menu a.active { background: #f2f2f2; color: #12294c; font-weight: bold; }
+
+/* ---------- page ---------- */
+.page {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+h1 { font-size: 24px; margin: 0 0 6px 0; }
+h2 { font-size: 18px; margin: 24px 0 8px 0; }
+h3 { font-size: 15px; margin: 0 0 8px 0; }
+.subtitle { margin: 0 0 16px 0; color: #555; }
+
+.box {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 14px;
+  margin-bottom: 16px;
+}
+
+/* ---------- forms ---------- */
+input, select, button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+input[type="text"], input[type="email"], input[type="tel"],
+input[type="date"], input[type="number"], select {
+  padding: 5px;
+  border: 1px solid #999;
+  background: #fff;
+}
+
+button, .button {
+  padding: 5px 12px;
+  border: 1px solid #777;
+  background: #e6e6e6;
+  color: #000;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+button:hover, .button:hover { background: #d4d4d4; }
+button:disabled { color: #888; cursor: default; }
+
+button.main {
+  background: #1a3c6e;
+  border-color: #1a3c6e;
+  color: #fff;
+}
+button.main:hover { background: #24487f; }
+
+button.danger { color: #a00000; }
+
+.filters { margin-bottom: 12px; }
+.filters input, .filters select, .filters button { margin: 0 6px 6px 0; }
+
+/* form with labels above fields */
+.form-grid label { display: block; margin-bottom: 10px; }
+.form-grid input, .form-grid select { display: block; width: 95%; margin-top: 3px; }
+.form-grid .col { float: left; width: 33%; }
+.clear { clear: both; }
+
+/* ---------- tables ---------- */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background: #fff;
+}
+
+th, td {
+  border: 1px solid #bbb;
+  padding: 6px 8px;
+  text-align: left;
+}
+
+th { background: #dde3ec; }
+td.num, th.num { text-align: right; }
+table.small { width: auto; }
+
+/* ---------- messages ---------- */
+.message { padding: 8px 10px; margin-bottom: 12px; border: 1px solid #999; background: #fff; }
+.message.ok { border-color: #2c7a2c; background: #eaf6ea; }
+.message.error { border-color: #a00000; background: #fbeaea; }
+
+/* ---------- stat boxes on home page ---------- */
+.stats { overflow: hidden; margin-bottom: 10px; }
+.stat {
+  float: left;
+  width: 23.5%;
+  margin-right: 2%;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 12px;
+}
+.stat:last-child { margin-right: 0; }
+.stat .value { font-size: 26px; font-weight: bold; }
+
+/* ---------- pagination ---------- */
+.pager { margin-top: 10px; }
+.pager button { margin-right: 3px; }
+.pager button.current { background: #1a3c6e; color: #fff; }
+
+/* ---------- attendance ---------- */
+.att-row td label { margin-right: 12px; }
+
+/* ---------- student profile ---------- */
+.profile-photo {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border: 1px solid #999;
+}
+
+.tabs { margin-bottom: 12px; }
+.tabs button { margin-right: 3px; }
+.tabs button.active { background: #1a3c6e; color: #fff; border-color: #1a3c6e; }
+
+.tab-panel { display: none; }
+.tab-panel.show { display: block; }
+
+table.details th { width: 200px; }
+
+.thumb { width: 32px; height: 32px; object-fit: cover; vertical-align: middle; border: 1px solid #999; }
+
+.footer {
+  border-top: 1px solid #bbb;
+  margin-top: 30px;
+  padding: 14px 20px;
+  text-align: center;
+  color: #555;
+}
+
+@media print {
+  .header, .menu, .footer, .noprint { display: none; }
+}
